@@ -1,24 +1,25 @@
 .pose-detector {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #000;
+  min-height: 480px;
 }
 
 .video-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9;
-  background: var(--bg-secondary);
-  border-radius: 15px;
-  overflow: hidden;
+  height: 100%;
 }
 
 video {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  background-color: #000;
 }
 
 .pose-canvas {
@@ -27,65 +28,117 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+}
+
+.controls-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.stop-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--error-color, #f44336);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(244, 67, 54, 0.9);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 20;
+  max-width: 80%;
+}
+
+.exercise-info {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .feedback-container {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 15px;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-}
-
-.rep-counter {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--gold-primary);
-  margin-bottom: 10px;
-}
-
-.form-feedback {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  color: white;
+  text-align: center;
 }
 
 .feedback-message {
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 500;
-  animation: slideIn 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
 }
 
-.feedback-message.error {
-  background: rgba(255, 68, 68, 0.2);
-  border: 1px solid #ff4444;
-  color: #ff4444;
+.status-indicator {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--success-color);
+  box-shadow: 0 0 8px var(--success-color);
+  animation: pulse 2s infinite;
 }
 
-.feedback-message.warning {
-  background: rgba(255, 170, 0, 0.2);
-  border: 1px solid #ffaa00;
-  color: #ffaa00;
-}
-
-.feedback-message.success {
-  background: rgba(80, 200, 120, 0.2);
-  border: 1px solid #50c878;
-  color: #50c878;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
+@keyframes pulse {
+  0% {
+    transform: scale(1);
     opacity: 1;
-    transform: translateX(0);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .pose-detector {
+    border-radius: 0;
+  }
+  
+  .stop-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .controls-container {
+    padding: 0.75rem;
+  }
+
+  .exercise-info {
+    font-size: 1rem;
+  }
+
+  .feedback-container {
+    padding: 0.75rem;
+  }
+
+  .feedback-message {
+    font-size: 1rem;
   }
 } 

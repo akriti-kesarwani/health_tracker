@@ -1,0 +1,247 @@
+:root {
+  /* Main Theme Colors - Inspired by Yoge */
+  --primary-green: #2A7D6B;
+  --secondary-green: #3A8F7D;
+  --accent-gold: #E4B55F;
+  --light-gold: #F2D399;
+  
+  /* Gold Accents */
+  --gold-primary: #D4AF37;
+  --gold-light: #F4D03F;
+  --gold-dark: #C5A028;
+  
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, #2A7D6B, #3A8F7D);
+  --accent-gradient: linear-gradient(135deg, #E4B55F, #F2D399);
+  --gold-gradient: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+  --dark-gold-gradient: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));
+  
+  /* Light Theme (Cream) */
+  --light-bg-primary: #FDF6E3;  /* Soft cream background */
+  --light-bg-secondary: #FAF0D7; /* Slightly darker cream */
+  --light-bg-tertiary: #F5E6C3;  /* Accent cream */
+  --light-text-primary: #2C3E50;
+  --light-text-secondary: #34495E;
+  --light-border: #D4AF37;
+  --light-card-bg: #FFFFFF;
+  --light-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  
+  /* Dark Theme */
+  --dark-bg-primary: #0A0A0A;    /* Deep black */
+  --dark-bg-secondary: #121212;  /* Slightly lighter black */
+  --dark-bg-tertiary: #1E1E1E;   /* Card background */
+  --dark-text-primary: #FFFFFF;
+  --dark-text-secondary: #E0E0E0;
+  --dark-border: #D4AF37;        /* Gold border */
+  --dark-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+  
+  /* Shadows */
+  --card-shadow: 0 8px 32px rgba(42, 125, 107, 0.1);
+  --button-shadow: 0 4px 12px rgba(228, 181, 95, 0.2);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* Updated App.css with new color applications */
+.App {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* Exercise Cards */
+.exercise-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.exercise-card:hover {
+  border-color: var(--primary-purple);
+  transform: translateY(-4px);
+}
+
+/* Timer Display */
+.timer-display {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Stats Cards */
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.stat-value {
+  color: var(--primary-purple);
+}
+
+/* Buttons */
+.primary-button {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.secondary-button {
+  background: var(--secondary-gradient);
+  color: white;
+  border: none;
+}
+
+.accent-button {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+}
+
+/* Header Styles */
+.app-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-header h1 {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Progress Bars */
+.progress-bar {
+  background: var(--bg-tertiary);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background: var(--primary-gradient);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Theme Application */
+.light {
+  --bg-primary: var(--light-bg-primary);
+  --bg-secondary: var(--light-bg-secondary);
+  --bg-tertiary: var(--light-bg-tertiary);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --border-color: var(--light-border);
+  --card-bg: var(--light-card-bg);
+  --shadow: var(--light-shadow);
+}
+
+.dark {
+  --bg-primary: var(--dark-bg-primary);
+  --bg-secondary: var(--dark-bg-secondary);
+  --bg-tertiary: var(--dark-bg-tertiary);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --border-color: var(--dark-border);
+  --card-bg: var(--dark-bg-tertiary);
+  --shadow: var(--dark-shadow);
+}
+
+/* Glass Effect Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Gradients */
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Exercise Type Badges */
+.exercise-badge {
+  background: var(--secondary-gradient);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Status Indicators */
+.status-active {
+  background: var(--success-green);
+}
+
+.status-completed {
+  background: var(--primary-purple);
+}
+
+.status-pending {
+  background: var(--accent-orange);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 4px;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Animation */
+.loading-gradient {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: loadingMove 1.5s infinite;
+}
+
+@keyframes loadingMove {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+} 
