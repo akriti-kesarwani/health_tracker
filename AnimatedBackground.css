@@ -1,0 +1,40 @@
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: linear-gradient(
+    45deg,
+    var(--gradient-color-1, #0f2027) 0%,
+    var(--gradient-color-2, #203a43) 50%,
+    var(--gradient-color-3, #2c5364) 100%
+  );
+}
+
+.animated-background::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: -1;
+}
+
+/* Theme-specific gradient colors */
+[data-theme='light'] .animated-background {
+  --gradient-color-1: #e0eafc;
+  --gradient-color-2: #cfdef3;
+  --gradient-color-3: #e0eafc;
+  opacity: 0.9;
+}
+
+[data-theme='dark'] .animated-background {
+  --gradient-color-1: #0f2027;
+  --gradient-color-2: #203a43;
+  --gradient-color-3: #2c5364;
+  opacity: 0.95;
+} 

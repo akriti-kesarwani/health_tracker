@@ -1,0 +1,63 @@
+.exercise-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.exercise-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--premium-blue);
+}
+
+.exercise-title {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.exercise-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.exercise-arrow {
+  position: absolute;
+  right: var(--spacing-xl);
+  bottom: var(--spacing-xl);
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: var(--premium-blue);
+}
+
+.exercise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(124, 58, 237, 0.1);
+}
+
+.exercise-card:hover .exercise-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.exercise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.exercise-card:hover::before {
+  transform: scaleX(1);
+} 

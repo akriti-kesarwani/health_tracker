@@ -1,0 +1,108 @@
+.calendar-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.calendar-header {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--gold-primary);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.calendar-header h2 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.calendar-controls button {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calendar-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--button-shadow);
+}
+
+.calendar-grid {
+  background: var(--bg-primary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--primary-gradient);
+  padding: 1rem;
+}
+
+.weekday {
+  color: white;
+  text-align: center;
+  font-weight: 500;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--border-color);
+}
+
+.calendar-day {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.day-number {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.workout-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  margin-top: 2rem;
+}
+
+.workout-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.calendar-day:hover {
+  background: var(--bg-secondary);
+  border-color: var(--gold-primary);
+}
+
+.calendar-day.empty {
+  background: var(--bg-secondary);
+}
+
+.today {
+  background: var(--gold-gradient);
+  color: var(--dark-bg-primary);
+  font-weight: bold;
+} 
